@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Pages from "./components/pages/Pages";
+import Category from "./components/Category";
+import Search from "./components/Search";
+import { BrowserRouter } from "react-router-dom";
+import styled from "styled-components";
+import { BiRestaurant } from "react-icons/bi";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Logo>
+          <h2>FOOD HUB</h2>
+          <BiRestaurant />
+        </Logo>
+
+        <Category />
+        <Search />
+        <Pages />
+      </BrowserRouter>
     </div>
   );
 }
+const Logo = styled.div`
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 0;
+  width: 20%;
+  svg {
+    font-size: 2rem;
+  }
+`;
 
 export default App;
